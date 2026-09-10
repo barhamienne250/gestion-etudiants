@@ -1,0 +1,34 @@
+### Variables
+@baseUrl = http://localhost:8080/api/etudiants
+
+### 1. Créer un étudiant (POST)
+POST {{baseUrl}}
+Content-Type: application/json
+
+{
+  "nom": "Sané",
+  "prenom": "Mariama",
+  "email": "mariama.sane@example.com"
+}
+
+### 2. Récupérer tous les étudiants (GET)
+GET {{baseUrl}}
+
+### 3. Récupérer un étudiant par id (GET) - remplace 1 par l'id réel
+GET {{baseUrl}}/1
+
+### 4. Mettre à jour un étudiant (PUT) - remplace 1 par l'id réel
+PUT {{baseUrl}}/1
+Content-Type: application/json
+
+{
+  "nom": "Sané",
+  "prenom": "Mariama Fatou",
+  "email": "mariama.fatou@example.com"
+}
+
+### 5. Supprimer un étudiant (DELETE) - remplace 1 par l'id réel
+DELETE {{baseUrl}}/1
+
+### 6. Vérifier la suppression (doit renvoyer 404)
+GET {{baseUrl}}/1
