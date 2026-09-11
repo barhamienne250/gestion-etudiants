@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/gestion_etudiants
+    url: jdbc:mysql://mysql-gestion-etudiants:3306/gestion_etudiants
     username: root
     password: root
 
