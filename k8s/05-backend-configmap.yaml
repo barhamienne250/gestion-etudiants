@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+  namespace: gestion-etudiants
+data:
+  DB_HOST: "mysql"
+  DB_PORT: "3306"
+  DB_NAME: "gestion_etudiants"
+  DB_USER: "root"

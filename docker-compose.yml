@@ -1,0 +1,46 @@
+services:
+  db:
+    image: mysql:8
+    container_name: ge-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: gestion_etudiants
+    ports:
+      - "3307:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: ./backend
+    container_name: ge-backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: gestion_etudiants
+      DB_USER: root
+      DB_PASSWORD: root
+      JWT_SECRET: changeThisSecretKeyInProductionEnvironmentPleaseMakeItLongEnough
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build: ./frontend
+    container_name: ge-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "4200:80"
+
+volumes:
+  db-data:

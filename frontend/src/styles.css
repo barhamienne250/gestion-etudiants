@@ -1,0 +1,29 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: #f4f6f9;
+  color: #1f2d3d;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
+.card { background: #fff; border-radius: 10px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); margin-bottom: 20px; }
+.btn { display: inline-block; padding: 8px 16px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; text-decoration: none; }
+.btn-primary { background: #1f4e79; color: #fff; }
+.btn-primary:hover { background: #163a5c; }
+.btn-danger { background: #c0392b; color: #fff; }
+.btn-danger:hover { background: #992d22; }
+.btn-secondary { background: #e5e9ef; color: #1f2d3d; }
+.btn-secondary:hover { background: #d4d9e0; }
+input, select, textarea {
+  width: 100%; padding: 9px 10px; margin-bottom: 12px;
+  border: 1px solid #cdd4dd; border-radius: 6px; font-size: 14px;
+}
+label { display: block; font-weight: 600; margin-bottom: 4px; font-size: 13px; color: #445; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #eaedf1; font-size: 14px; }
+th { background: #f0f3f7; color: #445; font-size: 12px; text-transform: uppercase; letter-spacing: .03em; }
+.error { color: #c0392b; font-size: 13px; margin-bottom: 10px; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+.badge-admin { background: #fdecea; color: #c0392b; }
+.badge-enseignant { background: #eaf2ff; color: #1f4e79; }
+.badge-etudiant { background: #eafaf1; color: #1e8449; }
